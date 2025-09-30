@@ -51,8 +51,14 @@
  */
 public class App {
     // You will MODIFY THIS ONE METHOD across tasks 1–5. Do not create new methods.
-    public static void calculateDiscount() {
-
+    public static double calculateDiscount(String mode, double amount) {
+        if (mode.equals("percent") && amount != -1) {
+            return amount * 0.5;
+        }else if (mode.equals("fixed")) {
+            return 20.0;
+        }else{
+            return -1;
+        }
     }
 
     public static void main(String[] args) {
@@ -79,10 +85,10 @@ public class App {
         // System.out.println(calculateDiscount(2001)); // -1.0 (too large)
 
         // A+ range
-        // System.out.println("Task 5:");
-        // System.out.println(calculateDiscount("percent", 200)); // 100.0
-        // System.out.println(calculateDiscount("fixed", 200));   // 20.0
-        // System.out.println(calculateDiscount("none", 200));    // -1.0 (unknown)
-        // System.out.println(calculateDiscount("percent", -1));  // -1.0 (invalid)
+        System.out.println("Task 5:");
+        System.out.println(calculateDiscount("percent", 200)); // 100.0
+        System.out.println(calculateDiscount("fixed", 200));   // 20.0
+        System.out.println(calculateDiscount("none", 200));    // -1.0 (unknown)
+        System.out.println(calculateDiscount("percent", -1));  // -1.0 (invalid)
     }
 }
